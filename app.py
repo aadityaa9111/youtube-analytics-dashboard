@@ -12,7 +12,7 @@ st.write("A mini version of YouTube Studio built with Streamlit and YouTube Data
 # --- SIDEBAR INPUT ---
 st.sidebar.header("🔑 API & Channel Setup")
 
-api_key = st.sidebar.text_input("Enter your YouTube API Key:", value="AIzaSyDfsjOemJcYQsm7DxqBM4HQdNSNVoR48wk", type="password")
+api_key = st.secrets["YT_API_KEY"]
 channel_id = st.sidebar.text_input("Enter Channel ID (e.g. UC_x5XG1OV2P6uZZ5FSM9Ttw):", value="")
 refresh = st.sidebar.button("🔄 Refresh Data")
 
@@ -125,3 +125,4 @@ if api_key and channel_id:
             st.warning("⚠️ No channel found. Please check your Channel ID.")
 else:
     st.info("🔎 Enter your API Key and Channel ID in the sidebar to begin.")
+
